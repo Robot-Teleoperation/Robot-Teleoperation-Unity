@@ -324,6 +324,7 @@ GameObject:
   - component: {fileID: 7217768352792522075}
   - component: {fileID: 7217768352792522074}
   - component: {fileID: 4689998443746138259}
+  - component: {fileID: 3479520292936078938}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -558,6 +559,23 @@ MonoBehaviour:
     adjustTrackingOrigin: 1
     adjustQualityLevel: 1
     qualityLevel: 0
+--- !u!114 &3479520292936078938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217768352792522073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ec248493b9bcf40bf0a92548f5a8ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 7217768352792522084}
+  topicName: camera_feed
+  frameRate: 1
+  cameraFPS: 1
+  requestedCameraSize: {x: 896, y: 504}
 --- !u!1001 &1078736051000093504
 PrefabInstance:
   m_ObjectHideFlags: 0
