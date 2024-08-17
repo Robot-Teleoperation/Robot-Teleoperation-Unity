@@ -19,7 +19,7 @@ public class CameraSubscriber : MonoBehaviour
 
     void CameraFeed(ImageMsg msg)
     {
-        Debug.Log("Received camera feed");
+        //Debug.Log("Received camera feed");
         Texture2D texture = new Texture2D((int)msg.width, (int)msg.height, TextureFormat.RGB24, false);
         texture.LoadImage(msg.data);
         texture.Apply();

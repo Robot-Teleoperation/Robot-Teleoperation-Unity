@@ -68,7 +68,7 @@ public class CameraPublisher : MonoBehaviour
         };
 
         ros.Publish(topicName, msg);
-        Debug.Log("Published image");
+        //Debug.Log("Published image");
 
         Destroy(texture);
     }
