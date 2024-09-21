@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: Metro Settings
   m_EditorClassIdentifier: 
   m_LoaderManagerInstance: {fileID: -7864470806609821467}
-  m_InitManagerOnStart: 1
+  m_InitManagerOnStart: 0
 --- !u!114 &5599017359525309843
 MonoBehaviour:
   m_ObjectHideFlags: 0

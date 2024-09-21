@@ -13,46 +13,35 @@ namespace RosMessageTypes.Hololens
         public const string k_RosMessageName = "hololens_msgs/GetAIData";
         public override string RosMessageName => k_RosMessageName;
 
-        public string class_name;
-        public string instructions;
-        public string model;
+        public string[] scene_names;
 
         public GetAIDataResponse()
         {
-            this.class_name = "";
-            this.instructions = "";
-            this.model = "";
+            this.scene_names = new string[0];
         }
 
-        public GetAIDataResponse(string class_name, string instructions, string model)
+        public GetAIDataResponse(string[] scene_names)
         {
-            this.class_name = class_name;
-            this.instructions = instructions;
-            this.model = model;
+            this.scene_names = scene_names;
         }
 
         public static GetAIDataResponse Deserialize(MessageDeserializer deserializer) => new GetAIDataResponse(deserializer);
 
         private GetAIDataResponse(MessageDeserializer deserializer)
         {
-            deserializer.Read(out this.class_name);
-            deserializer.Read(out this.instructions);
-            deserializer.Read(out this.model);
+            deserializer.Read(out this.scene_names, deserializer.ReadLength());
         }
 
         public override void SerializeTo(MessageSerializer serializer)
         {
-            serializer.Write(this.class_name);
-            serializer.Write(this.instructions);
-            serializer.Write(this.model);
+            serializer.WriteLength(this.scene_names);
+            serializer.Write(this.scene_names);
         }
 
         public override string ToString()
         {
             return "GetAIDataResponse: " +
-            "\nclass_name: " + class_name.ToString() +
-            "\ninstructions: " + instructions.ToString() +
-            "\nmodel: " + model.ToString();
+            "\nscene_names: " + System.String.Join(", ", scene_names.ToList());
         }
 
 #if UNITY_EDITOR

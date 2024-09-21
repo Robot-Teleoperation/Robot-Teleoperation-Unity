@@ -4,12 +4,11 @@ using RosMessageTypes.Hololens;
 
 public class CameraPublisher : MonoBehaviour
 {
-    public Camera cam;
     public string topicName = "camera_feed";
-    public int frameRate = 60;
+    public int frameRate = 10;
 
     [SerializeField]
-    private int cameraFPS = 60;
+    private int cameraFPS = 10;
 
     [SerializeField]
     private Vector2Int requestedCameraSize = new(896, 504);
@@ -26,6 +25,7 @@ public class CameraPublisher : MonoBehaviour
     {
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<ImageMsg>(topicName);
+        
 
         WebCamDevice[] devices = WebCamTexture.devices;
         for (int i = 0; i < devices.Length; i++)
@@ -58,8 +58,6 @@ public class CameraPublisher : MonoBehaviour
 
         byte[] imageBytes = texture.EncodeToPNG(); // Convert texture to bytes
 
-        //byte[] bytes = new byte[width * height * 3];
-
         ImageMsg msg = new ImageMsg
         {
             data = imageBytes,
@@ -72,5 +70,6 @@ public class CameraPublisher : MonoBehaviour
 
         Destroy(texture);
     }
+
 
 }

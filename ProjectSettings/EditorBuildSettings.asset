@@ -4,7 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Satelite_Selection2.unity
+    guid: cf977d90b84cefe49aa3d215a89eb8e4
+  - enabled: 1
+    path: Assets/Scenes/ACRIM_3.unity
+    guid: 7d8329c3093728f449618162afcbc064
+  - enabled: 1
+    path: Assets/Scenes/ACRIMSAT_Fine_Sun_Sensor.unity
+    guid: dc752d35e7c787f45ae9298898894db7
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: a305c01643e14d94fb94fbe871ab08e9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e9aae38e55a58434c915f4d8d8dfcf7e, type: 2}
